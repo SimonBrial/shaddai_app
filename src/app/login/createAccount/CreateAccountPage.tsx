@@ -1,4 +1,4 @@
-import CreateAccount from "./CreateAccount";
+import CreateAccountForm from "./CreateAccountForm";
 
 const CreateAccountPage = () => {
   return (
@@ -7,7 +7,7 @@ const CreateAccountPage = () => {
         Icono de la aplicacion
       </section>
       <section className="w-full sm:w-1/2 bg-white flex justify-center items-center m-auto md:m-0 p-10">
-        <CreateAccount />
+        <CreateAccountForm />
       </section>
     </div>
   );

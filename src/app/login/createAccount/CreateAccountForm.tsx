@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-const CreateAccount = () => {
+const CreateAccountForm = () => {
   return (
     <Card
       color="transparent"
@@ -110,13 +110,15 @@ const CreateAccount = () => {
             containerProps={{ className: "-ml-2.5 " }}
           />
         </div>
-        <Button
-          className="mt-6 bg-gradient-to-l from-principal-color to-secondary-color"
-          fullWidth
-          placeholder={"iniciar sesion"}
-        >
-          Crear Cuenta
-        </Button>
+        <Link to={"/home"}>
+          <Button
+            className="mt-6 bg-gradient-to-l from-principal-color to-secondary-color"
+            fullWidth
+            placeholder={"iniciar sesion"}
+          >
+            Crear Cuenta
+          </Button>
+        </Link>
         <Typography
           color="gray"
           className="mt-4 text-center font-normal"
@@ -135,4 +137,4 @@ const CreateAccount = () => {
   );
 };
 
-export default CreateAccount;
+export default CreateAccountForm;

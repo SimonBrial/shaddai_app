@@ -64,13 +64,15 @@ const LoginForm = () => {
             }}
           />
         </div>
-        <Button
-          className="mt-6 bg-gradient-to-l from-principal-color to-secondary-color"
-          fullWidth
-          placeholder={"iniciar sesion"}
-        >
-          Iniciar sesion
-        </Button>
+        <Link to={"/home"}>
+          <Button
+            className="mt-6 bg-gradient-to-l from-principal-color to-secondary-color"
+            fullWidth
+            placeholder={"iniciar sesion"}
+          >
+            Iniciar sesion
+          </Button>
+        </Link>
         <Typography
           color="gray"
           className="mt-4 text-center font-normal"
