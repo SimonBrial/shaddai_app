@@ -110,7 +110,7 @@ const CreateAccountForm = () => {
             containerProps={{ className: "-ml-2.5 " }}
           />
         </div>
-        <Link to={"/home"}>
+        <Link to={"/user/home"}>
           <Button
             className="mt-6 bg-gradient-to-l from-principal-color to-secondary-color"
             fullWidth

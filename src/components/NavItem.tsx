@@ -5,40 +5,29 @@ interface NavItemProps {
   dir: string;
   label: string;
   icon: React.ReactNode;
+  _id: string;
   active: boolean;
 }
 
 const NavItem = ({ dir, icon, label, active }: NavItemProps) => {
   return (
-    <>
-      {active ? (
-        <Link to={dir}>
-          <ListItem
-            placeholder={"nav item"}
-            className="flex justify-center text-principal-color hover:text-principal-color px-10 py-4 bg-white hover:bg-white/100 focus:bg-white/100 focus:text-principal-color"
-          >
-            <ListItemPrefix placeholder={"nav icon"} className="text-[1.8rem]">
-              {icon}
-            </ListItemPrefix>
-            <Typography placeholder={"label"} className="text-xl">
-              {label}
-            </Typography>
-          </ListItem>
-        </Link>
-      ) : (
-        <Link to={dir}>
-          <ListItem
-            placeholder={"nav item"}
-            className="text-white hover:text-principal-color px-10 py-4 bg-transparent hover:bg-white flex justify-center"
-          >
-            <ListItemPrefix placeholder={"nav icon"} className="text-[1.8rem]">
-              {icon}
-            </ListItemPrefix>
-            <h2 className="text-xl">{label}</h2>
-          </ListItem>
-        </Link>
-      )}
-    </>
+    <Link to={dir}>
+      <ListItem
+        placeholder={"nav item"}
+        className={
+          active
+          ? "text-red-500 px-10 py-4 hover:text-principal-color bg-white hover:bg-white/100 focus:bg-white/100 focus:text-principal-color active:bg-white/100 active:text-principal-color"
+          : "text-white px-10 py-4 hover:text-principal-color hover:bg-white/100"
+        }
+      >
+        <ListItemPrefix placeholder={"nav icon"} className="text-[1.8rem]">
+          {icon}
+        </ListItemPrefix>
+        <Typography placeholder={"label"} className="text-xl">
+          {label}
+        </Typography>
+      </ListItem>
+    </Link>
   );
 };
 
