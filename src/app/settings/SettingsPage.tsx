@@ -1,8 +1,6 @@
-import React from "react";
 import TitleLayout from "../../components/TitleLayout";
 import { IoSettingsOutline } from "../../icons";
 import { useForm } from "react-hook-form";
-
 
 // https://react-hook-form.com/
 
@@ -12,7 +10,7 @@ const SettingsPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data: any) => console.log(data);
   console.log(errors);
   return (
     <div className="p-5 sm:p-10 w-full flex flex-col gap-3 h-screen">
