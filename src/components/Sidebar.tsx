@@ -1,24 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import NavItem from "./NavItem";
 import {
+  HiOutlineDocumentAdd,
   IoSettingsOutline,
   RiHomeHeartLine,
   LuDatabase,
   LuChefHat,
-  IoMenu,
   IoClose,
-  HiOutlineDocumentAdd,
+  IoMenu,
+  IoLogInOutline,
 } from "../icons";
 import User from "./User";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-interface SidebarArray {
-  dir: string;
-  label: string;
-  icon: React.ReactNode;
-  _id: string;
-}
+import { SidebarArray } from "../interface/interface";
 
 const sibebarArr: SidebarArray[] = [
   {
@@ -99,15 +94,26 @@ const Sidebar = () => {
         <div
           className={
             show
-              ? "hidden fixed z-50 sm:flex h-screen w-screen sm:max-w-[16.5rem] p-4 bg-gradient-to-t from-principal-color to-secondary-color rounded-none bg-blue-500"
-              : "flex fixed sm:hidden z-50 h-screen w-[80%] sm:max-w-[16.5rem p-4 bg-gradient-to-t from-principal-color to-secondary-color rounded-none transition ease-in-out duration-300 translate-x-0"
+              ? "hidden fixed z-50 sm:flex flex-col justify-between h-screen w-screen sm:max-w-[16.5rem] p-4 bg-gradient-to-t from-principal-color to-secondary-color rounded-none bg-blue-500"
+              : "flex fixed flex-col justify-between sm:hidden z-50 h-screen w-[80%] sm:max-w-[16.5rem p-4 bg-gradient-to-t from-principal-color to-secondary-color rounded-none transition ease-in-out duration-300 translate-x-0"
           }
         >
           <div className="mt-5">
             <div className="mb-2 p-2">
               <User />
             </div>
-            <ul className="p-2 flex flex-col gap-2 w-full">{generateSidebar()}</ul>
+            <ul className="p-2 flex flex-col gap-2 w-full">
+              {generateSidebar()}
+            </ul>
+          </div>
+          <div className="border-[1px] border-white rounded-[6px] mb-10 sm:mb-0">
+            <NavItem
+              _id={crypto.randomUUID()}
+              icon={<IoLogInOutline />}
+              label="Salir"
+              dir="/"
+              active={false}
+            />
           </div>
         </div>
         {show ? (

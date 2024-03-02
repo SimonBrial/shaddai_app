@@ -1,10 +1,5 @@
 import { RiCake3Line } from "../../icons";
-import { RecipesArr } from "../../interface/interface";
-
-interface RecipesItemProps {
-  item: RecipesArr;
-  isMobile: boolean;
-}
+import { RecipesItemProps } from "../../interface/interface";
 
 const RecipesTableItem = ({ item, isMobile }: RecipesItemProps) => {
   return (

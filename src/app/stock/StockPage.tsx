@@ -25,7 +25,7 @@ const StockPage = () => {
               value={viewSelect}
               onChange={(e) => setViewSelect(e.target.value)}
               name="select stock"
-              className="rounded-[6px] border-principal-color text-principal-color px-3 py-2 focus:outline-0 focus:ring-0 shadow-md"
+              className="rounded-[6px] border-[1px] border-principal-color text-principal-color px-3 py-2 focus:outline-0 focus:ring-0 shadow-md"
             >
               {arrayViews.map((option, i) => (
                 <option

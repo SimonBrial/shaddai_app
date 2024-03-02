@@ -1,6 +1,6 @@
 import BtnFavorite from "../../components/BtnFavorite";
-import BtnLayout from "../../components/BtnLayout";
 import { LuEye, RiCake3Line } from "../../icons";
+import { Disclosure, Transition } from "@headlessui/react";
 
 const RecipeCard = () => {
   return (
@@ -15,9 +15,45 @@ const RecipeCard = () => {
         </span>
         <hr className="absolute top-4 bg-principal-color h-1 w-[44%] right-0 rounded-lg" />
       </div>
-      <div className="flex items-center justify-between gap-2">
-        <BtnLayout icon={<LuEye />} label="Ver Receta" fullWidth />
-        <BtnFavorite />
+      <div className="flex items-start justify-between gap-2">
+        <Disclosure>
+          {({ open }) => (
+            <>
+              <div className="flex flex-col w-full">
+                <div className="flex gap-2">
+                  <Disclosure.Button className="shadow-md bg-gradient-to-l from-principal-color to-secondary-color hover:opacity-90 transition-all px-[1.5rem] py-[0.6rem] rounded-[6px] text-white font-bold flex gap-2 items-center justify-center w-full">
+                    <span className="text-2xl">
+                      <LuEye />
+                    </span>
+                    <p>Ver Receta</p>
+                  </Disclosure.Button>
+                  <BtnFavorite />
+                </div>
+                <Transition
+                  show={open}
+                  enter="transition duration-100 ease-out"
+                  enterFrom="transform scale-95 opacity-0"
+                  enterTo="transform scale-100 opacity-100"
+                  leave="transition duration-75 ease-out"
+                  leaveFrom="transform scale-100 opacity-100"
+                  leaveTo="transform scale-95 opacity-0"
+                >
+                  <Disclosure.Panel static className="px-4 pb-2 pt-4 text-sm text-principal-color">
+                    If you're unhappy with your purchase for any reason, email
+                    us within 90 days and we'll refund you in full, no questions
+                    asked.
+                    If you're unhappy with your purchase for any reason, email
+                    us within 90 days and we'll refund you in full, no questions
+                    asked.
+                    If you're unhappy with your purchase for any reason, email
+                    us within 90 days and we'll refund you in full, no questions
+                    asked.
+                  </Disclosure.Panel>
+                </Transition>
+              </div>
+            </>
+          )}
+        </Disclosure>
       </div>
     </div>
   );

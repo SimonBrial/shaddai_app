@@ -9,7 +9,7 @@ const HomePageContainer = () => {
   const location = useLocation();
   const path = location.pathname.split("/");
   return (
-    <div className="p-5 sm:p-10 sm:pt-4 w-full flex flex-col gap-3 h-screen sm:scroll-smooth sm:snap-y sm:max-h-screen sm:overflow-y-auto sm:overflow-hidden sm:no-scrollbar">
+    <div className="p-5 sm:p-10 sm:pt-4 w-full flex flex-col gap-3 h-screen overflow-y-auto custom-scrollbar">
       <div className="flex flex-col gap-0 ">
         <TitleLayout
           title={path[path.length - 1]}
@@ -22,13 +22,15 @@ const HomePageContainer = () => {
           <HomeCard label="Recordatorios" total={6} />
         </div>
       </div>
-      <div className="w-full relative flex items-center h-9 py-2">
-        <hr className="absolute top-4 bg-principal-color h-1 w-[45%] rounded-lg" />
-        <span className="absolute left-[46%] text-[1.5rem] top-1 text-principal-color bg-transparent px-1">
+      {/* ------------------------------------------------ Divider ------------------------------------------------ */}
+      <div className="w-full relative flex items-center h-9 py-2 pb-5 sm:pb-0">
+        <hr className="absolute top-4 bg-principal-color h-1 w-[45%] sm:w-[48%] rounded-lg" />
+        <span className="absolute left-[45.55%] sm:left-[48.3%] text-[1.5rem] top-1 text-principal-color bg-transparent px-1">
           <RiCake3Line />
         </span>
-        <hr className="absolute top-4 bg-principal-color h-1 w-[45%] right-0 rounded-lg" />
+        <hr className="absolute top-4 bg-principal-color h-1 w-[45%] sm:w-[48%] right-0 rounded-lg" />
       </div>
+      {/* ------------------------------------------------ Divider ------------------------------------------------ */}
       <div className="flex flex-col sm:flex-row gap-2 items-start h-full">
         <ChartContainer />
         <RemindersContainer />

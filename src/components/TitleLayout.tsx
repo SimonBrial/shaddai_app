@@ -1,4 +1,3 @@
-import { Typography } from "@material-tailwind/react";
 import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 
 const TitleLayout = ({
@@ -14,9 +13,7 @@ const TitleLayout = ({
     <div>
       <div className="flex items-center gap-2 text-principal-color cursor-default">
         {withIcon ? <span className="text-[2.5rem]">{icon}</span> : <></>}
-        <Typography placeholder={"titulo"} className="text-2xl">
-          {capitalizeFirstLetter(title)}
-        </Typography>
+        <h1 className="text-2xl">{capitalizeFirstLetter(title)}</h1>
       </div>
       <hr className="bg-principal-color h-1 rounded-lg" />
     </div>

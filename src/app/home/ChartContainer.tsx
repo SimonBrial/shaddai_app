@@ -1,18 +1,12 @@
-import {
-  CardHeader,
-  CardBody,
-  Card,
-  Typography,
-} from "@material-tailwind/react";
 import TitleLayout from "../../components/TitleLayout";
 import {
-  Area,
-  AreaChart,
-  CartesianGrid,
   ResponsiveContainer,
+  CartesianGrid,
+  AreaChart,
   Tooltip,
   XAxis,
   YAxis,
+  Area,
 } from "recharts";
 
 const data = [
@@ -61,32 +55,18 @@ const data = [
 ];
 const ChartContainer = () => {
   return (
-    <div className="flex flex-col w-full sm:w-2/3 gap-2 justify-start">
+    <div className="flex flex-col w-full sm:w-2/3 gap-2 justify-start h-full">
       <TitleLayout title="Grafica de Ventas" icon withIcon={false} />
-      <Card
-        placeholder={"prueba"}
-        className="border-[1px] rounded-[6px] border-principal-color pb-5 "
-      >
-        <CardHeader
-          placeholder={"prueba"}
-          floated={false}
-          shadow={false}
-          color="transparent"
-          className="flex flex-col gap-4 rounded-none md:flex-row md:items-center"
-        >
+      <div className="border-[1px] rounded-[6px] border-principal-color pb-5 h-full flex flex-col items-center w-full">
+        <div className="flex flex-col gap-4 rounded-none md:flex-row md:items-center p-2 pl-5 w-full">
           <div className="flex items-end gap-1">
-            <Typography placeholder={"Chart's title"} className="text-[2rem]">
-              Ventas{" "}
-            </Typography>
-            <Typography
-              placeholder={"Chart's title"}
-              className="text-sm bg-principal-color/30 text-principal-color px-2 py-[1px] rounded-[6px] mb-1"
-            >
+            <h2 className="text-[2rem]">Ventas </h2>
+            <h3 className="text-sm bg-principal-color/30 text-principal-color px-2 py-[1px] rounded-[6px] mb-1">
               (Por semana){" "}
-            </Typography>
+            </h3>
           </div>
-        </CardHeader>
-        <CardBody placeholder={"card body"} className="px-2 pb-0">
+        </div>
+        <div className="px-3 pb-0 w-full">
           <ResponsiveContainer width="100%" height={400}>
             <AreaChart
               width={600}
@@ -135,8 +115,8 @@ const ChartContainer = () => {
               />
             </AreaChart>
           </ResponsiveContainer>
-        </CardBody>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };

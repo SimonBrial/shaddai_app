@@ -1,15 +1,13 @@
-import toast, { Toaster } from "react-hot-toast";
+// import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   FaStar,
-  IoCheckmarkCircleOutline,
-  IoClose,
-  IoCloseCircleOutline,
 } from "../icons";
 import { useState } from "react";
 
 const BtnFavorite = () => {
   const [added, setAdded] = useState<boolean>(false);
-  const notify = () =>
+  /* const notify = () =>
     toast.custom(
       (t) => (
         <>
@@ -17,7 +15,7 @@ const BtnFavorite = () => {
             <div
               className={`${
                 t.visible ? "animate-enter" : "animate-leave"
-              } max-w-md w-full bg-white shadow-md shadow-blue-gray-100/30 rounded-lg pointer-events-auto flex`}
+              } max-w-md w-full bg-white shadow-md shadow-blue-gray-100/30 rounded-lg pointer-events-auto flex mb-10 sm:mb-0 border-principal-color border-[1px]`}
             >
               <div className="pointer-events-auto w-full max-w-sm overflow-hidden">
                 <div className="p-4">
@@ -51,7 +49,7 @@ const BtnFavorite = () => {
             <div
               className={`${
                 t.visible ? "animate-enter" : "animate-leave"
-              } max-w-md w-full bg-white shadow-md shadow-blue-gray-100/30 rounded-lg pointer-events-auto flex relative`}
+              } max-w-md w-full bg-white shadow-md shadow-blue-gray-100/30 rounded-lg pointer-events-auto flex relative mb-10 sm:mb-0 border-principal-color border-[1px]`}
             >
               <div className="pointer-events-auto w-full max-w-sm overflow-hidden">
                 <div className="p-4">
@@ -86,14 +84,15 @@ const BtnFavorite = () => {
       ),
       {
         position: "bottom-right",
+        duration: 2000
       },
-    );
+    ); */
   return (
     <>
       <button
         className="shadow-md bg-gradient-to-l from-principal-color to-secondary-color hover:opacity-90 transition-all px-[1.5rem] py-[0.6rem] rounded-[6px] text-white font-bold flex gap-2 items-center justify-center"
         onClick={() => {
-          notify();
+          // notify();
           setAdded((a) => !a);
         }}
       >
@@ -103,7 +102,7 @@ const BtnFavorite = () => {
           <FaStar />
         </span>
       </button>
-      <Toaster />
+      {/* <ToastContainer /> */}
     </>
   );
 };
